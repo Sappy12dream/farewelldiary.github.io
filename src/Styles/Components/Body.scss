@@ -1,0 +1,618 @@
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+.body {
+    width: 100vw;
+    height: calc(100vh - 70px);
+    background: $white;
+    position: relative;
+
+    overflow: hidden;
+
+    @include media("<=desktop") {
+        width: 100vw;
+        height: calc(100vh - 60px);
+
+    }
+
+
+    @include media("<=tablet") {
+        width: 100vw;
+        height: 100%;
+    }
+
+    @include media("<=phone") {
+        width: 100vw;
+        height: 100%;
+    }
+
+    .navigation {
+        position: absolute;
+        background: none;
+        font-size: 3rem;
+        outline: none;
+        border: none;
+
+        @include media("<=phone") {
+            font-size: 1.8rem;
+        }
+    }
+
+    .navigation-left {
+        left: 10%;
+
+        @include media("<=desktop") {
+            left: 8%;
+
+        }
+
+        @include media("<=tablet") {
+            left: 4%;
+
+        }
+
+        @include media("<=phone") {
+            left: 1%;
+            top: 20%;
+        }
+    }
+
+    .navigation-right {
+        right: 10%;
+
+        @include media("<=desktop") {
+            right: 8%;
+
+        }
+
+        @include media("<=tablet") {
+            right: 5%;
+        }
+
+        @include media("<=phone") {
+            right: 1%;
+            top: 20%;
+        }
+    }
+
+    .body__container {
+        width: 70%;
+        height: 80%;
+        background: $white;
+
+        @include media("<=tablet") {
+            width: 80%;
+            height: 100%;
+            margin-top: 1rem;
+
+        }
+
+        @include media("<=phone") {
+            flex-direction: column;
+            width: 90%;
+            height: 100%;
+            margin-top: 2.9rem;
+        }
+
+        .col {
+            width: 40%;
+            height: 100%;
+
+            @include media("<=tablet") {
+                width: 50%;
+                height: 100%;
+
+            }
+
+            @include media("<=phone") {
+                width: 100%;
+            }
+
+            .img__container {
+                width: 100%;
+                height: 55%;
+                border-radius: .3rem;
+                overflow: hidden;
+                object-fit: cover;
+                object-position: center;
+                
+
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: .3rem;
+                    box-shadow: 1px 2px 22px rgba(0, 0, 0, .3);
+                    transition: .5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+                    @include media("<=phone") {
+                        box-shadow: 1px 2px 12px rgba($color: #000000, $alpha: .3);
+                    }
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .blog__links {
+                width: 100%;
+                height: 50%;
+
+                ul {
+                    margin-top: 1.2rem;
+
+                    li {
+                        padding: .4rem .5rem;
+                        background: $pink;
+                        margin-top: .4rem;
+                        transition: .1s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+                        @include media("<=phone") {
+                            padding: .2rem .3rem;
+                            margin-top: .2rem;
+                        }
+
+                        a {
+                            color: $dark;
+                            font-size: 1.2rem;
+                            font-weight: 600;
+                            text-transform: capitalize;
+                            letter-spacing: .2px;
+                            font-family: $bodyFont;
+
+                            @include media("<=phone") {
+                                font-size: 1rem;
+                            }
+                        }
+
+                        &:hover {
+                            transform: scale(1.02);
+                            border-left: 4px solid $blue;
+
+                            a {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .col2 {
+            width: 60%;
+            height: 100%;
+
+            @include media("<=tablet") {
+                width: 50%;
+                height: 100%;
+
+            }
+
+            @include media("<=phone") {
+                width: 100%;
+            }
+
+            .content__container {
+                width: 100%;
+                height: 100%;
+                padding: 2rem;
+
+                @include media("<=desktop") {
+                    padding: 0rem;
+                    padding-left: 1rem;
+
+                }
+
+                @include media("<=tablet") {
+
+                    padding: 1.2rem;
+
+                }
+
+                @include media("<=phone") {
+                    padding: 0;
+                    padding-top: .8rem;
+                }
+
+                .quote__container {
+                    width: 100%;
+                    height: 50%;
+
+                    @include media("<=desktop") {
+                        height: 50%;
+
+                    }
+
+                    @include media("<=phone") {
+                        font-size: 1.6rem;
+                    }
+
+
+
+                    .icon__container {
+                        width: 10%;
+                        height: 100%;
+
+
+                        .icon {
+                            font-size: 3rem;
+                            color: $black;
+
+                            @include media("<=desktop") {
+                                font-size: 2.4rem;
+
+                            }
+
+                            @include media("<=tablet") {
+                                font-size: 2rem;
+
+                            }
+
+                            @include media("<=phone") {
+                                font-size: 1.6rem;
+                            }
+                        }
+
+                    }
+
+                    .quote__body {
+                        width: 90%;
+                        height: 100%;
+                        padding-left: 1rem;
+                        margin-bottom: .4rem;
+
+                        @include media("<=desktop") {
+                            padding: .6rem;
+
+                        }
+
+                        @include media("<=tablet") {
+                            padding: 1rem;
+
+                        }
+
+                        @include media("<=phone") {
+                            padding: 0rem;
+                        }
+
+                        p {
+                            font-size: 2rem;
+                            font-weight: bold;
+                            font-family: $headingFont;
+                            color: $darkColor;
+                            text-transform: capitalize;
+
+                            @include media("<=desktop") {
+                                font-size: 1.4rem;
+
+                            }
+
+                            @include media("<=tablet") {
+                                font-size: 1.2rem;
+
+                            }
+
+                            @include media("<=phone") {
+                                font-size: 1.5rem;
+                            }
+                        }
+
+                        h3 {
+                            float: right;
+                            font-size: 1.4rem;
+                            font-family: $headingFont;
+                            text-transform: capitalize;
+                            letter-spacing: .1rem;
+                            margin-top: .3rem;
+                            color: $black;
+
+                            @include media("<=desktop") {
+                                font-size: 1.2rem;
+
+                                margin-top: 0rem;
+
+                            }
+
+                            @include media("<=tablet") {
+                                font-size: 1.2rem;
+
+                                margin-top: .5rem;
+
+                            }
+
+
+                        }
+
+                        .line {
+                            width: 50%;
+                            height: 2px;
+                            background: $black;
+                            margin-top: .3rem;
+
+                        }
+                    }
+
+                }
+
+                .message__body {
+                    width: 100%;
+                    height: 50%;
+
+                    @include media("<=desktop") {
+                        width: 100%;
+                        height: 50%;
+
+
+                    }
+
+                    p {
+
+                        font-size: 1.1rem;
+                        font-weight: 300;
+                        font-family: $bodyFont;
+                        color: $black;
+                        text-transform: capitalize;
+
+                        @include media("<=desktop") {
+                            font-size: 1rem;
+                            align-items: flex-end;
+
+                        }
+
+                        @include media("<=phone") {
+                            font-size: .98rem;
+                            align-items: flex-end;
+
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.create {
+    position: absolute;
+    top: 1%;
+    right: 5%;
+    background: $pink;
+    border: none;
+    padding: .3rem .4rem;
+    border-radius: .3rem;
+    font-size: 1.2rem;
+    color: $dark;
+    box-shadow: 2px 4px 12px rgba($color: $darkBlue, $alpha: .3);
+
+    @include media("<=tablet") {
+        padding: .28rem .35rem;
+        font-size: 1rem;
+
+
+    }
+
+    @include media("<=phone") {
+        padding: 0;
+        text-align: center;
+        font-size: 1.8rem;
+        border-radius: 100%;
+        left: 50%;
+        background: $darkColor;
+        transform: translateX(-50%);
+
+        span {
+            display: none;
+        }
+
+    }
+
+    .icon {
+        margin-right: .3rem;
+
+        @include media("<=phone") {
+            margin: 0rem;
+        }
+    }
+
+}
+
+.modal__container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: black;
+    transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    .modal {
+        background: $white;
+        padding: 2rem;
+        flex-direction: column;
+        border-radius: .3rem;
+        box-shadow: 2px 4px 12px rgba(0, 0, 0, .3);
+        position: relative;
+
+        @include media("<=desktop") {
+            padding: 1.8rem;
+
+        }
+
+        @include media("<=tablet") {
+            padding: 1rem;
+
+        }
+
+        @include media("<=phone") {
+            padding: .6rem;
+            border-radius: .2rem;
+        }
+
+        .file__input{
+            background: $pink;
+            padding: .2rem .3rem;
+            border-radius: .2rem;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: .4rem;
+
+            @include media("<=desktop") {
+                padding: .4rem;
+                font-size: 1.3rem;
+
+            }
+
+            @include media("<=tablet") {
+                padding: .3rem;
+                font-size: 1.2rem;
+
+            }
+
+            @include media("<=phone") {
+                padding: .2rem;
+                font-size: 1rem;
+
+            }
+        }
+input[file]{
+    background: $pink;
+}
+        .clear-btn {
+            position: absolute;
+            right: 5%;
+            top: 5%;
+            background: none;
+            outline: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+
+            @include media("<=desktop") {
+                font-size: 1.8rem;
+
+            }
+
+            @include media("<=tablet") {
+                font-size: 1.4rem;
+
+            }
+
+            @include media("<=phone") {
+                font-size: 1.2rem;
+            }
+
+        }
+        progress[value] {
+            width: 100%;
+            height: 10px;
+            margin-bottom: .3rem;
+          }
+        .save-btn {
+            background: $black;
+            padding: .2rem .5rem;
+            border-radius: .2rem;
+            color: $white;
+            border: none;
+            outline: none;
+            font-size: 1.1rem;
+            margin: .4rem;
+        }
+
+
+        .flex {
+            flex-direction: column;
+            margin-bottom: 1.2rem;
+
+            label {
+                text-transform: capitalize;
+                font-size: 1rem;
+            }
+
+            input {
+                border: .03rem solid $grey;
+                padding: .8rem;
+                border-radius: .2rem;
+                margin: .3rem 0;
+                width: 100%;
+
+                @include media("<=desktop") {
+                    padding: .7rem;
+
+                }
+
+                @include media("<=tablet") {
+                    padding: .6rem;
+
+                }
+
+                @include media("<=phone") {
+                    padding: .4rem;
+
+                }
+            }
+
+            textarea {
+                border: .03rem solid $grey;
+                padding: .8rem;
+                border-radius: .2rem;
+                margin: .3rem 0;
+                resize: none;
+                width: 100%;
+
+                @include media("<=desktop") {
+                    padding: .7rem;
+
+                }
+
+                @include media("<=tablet") {
+                    padding: .6rem;
+
+                }
+
+                @include media("<=phone") {
+                    padding: .4rem;
+
+                }
+            }
+
+            p {
+                color: $red;
+                font-size: .6rem;
+
+            }
+
+        }
+    }
+}
+
+.post__count{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    h2{
+        font-size: 1.4rem;
+        font-family: $quoteFont;
+        text-transform: capitalize;
+    }
+    p{
+        line-height: 1.4rem;
+        font-size: 1.4rem;
+        font-family: $quoteFont;
+        margin-left: .2rem;
+    }
+}
